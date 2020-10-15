@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".RegisterActivity">
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:fontFamily="@font/andika"
+        android:background="#11000000"
+        android:ems="10"
+        android:hint="Username"
+        android:textSize="16dp"
+        android:drawableLeft="@drawable/ic_action_user"
+
+        android:inputType="textPersonName" />
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@mipmap/ikona"
+        android:layout_above="@id/username"
+        android:layout_marginBottom="-170dp"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/pass"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:layout_below="@id/username"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/andika"
+        android:background="#11000000"
+        android:hint="Enter Password"
+        android:textSize="16dp"
+        android:layout_alignLeft="@id/username"
+        android:layout_alignRight="@id/username"
+        android:drawableLeft="@drawable/ic_action_pass"
+
+        android:layout_centerHorizontal="true"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/cpass"
+        android:layout_width="200dp"
+        android:layout_below="@id/pass"
+        android:layout_marginTop="20dp"
+        android:layout_alignLeft="@id/pass"
+        android:layout_alignRight="@id/pass"
+        android:fontFamily="@font/andika"
+        android:layout_height="50dp"
+        android:textSize="16dp"
+        android:hint="Confirm Password"
+        android:drawableLeft="@drawable/ic_action_pass"
+        android:background="#11000000"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:id="@+id/registerCard"
+        android:layout_height="50dp"
+        android:layout_below="@id/cpass"
+        android:layout_marginTop="80dp"
+        android:visibility="visible"
+        app:cardBackgroundColor="@color/myColor"
+        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="25dp"
+        android:elevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:layout_centerInParent="true"
+                android:text="Register"
+                android:fontFamily="@font/andika"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:id="@+id/returnButton"
+        android:layout_height="50dp"
+        android:layout_below="@id/cpass"
+        android:layout_marginTop="80dp"
+        app:cardBackgroundColor="@color/myColor"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="25dp"
+        android:elevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textReturn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:layout_centerInParent="true"
+                android:text="Go to Sign In"
+                android:fontFamily="@font/andika"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

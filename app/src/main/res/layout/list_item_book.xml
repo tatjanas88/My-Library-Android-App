@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="7dp"
+    app:cardElevation="10dp"
+    android:layout_margin="5dp">
+
+    <RelativeLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/collapsedLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnDownArrow"
+                android:layout_below="@id/imgBook"
+                android:src="@drawable/ic_down_arrow"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="7dp"/>
+
+            <ImageView
+                android:id="@+id/imgBook"
+                android:layout_width="200dp"
+                android:layout_height="220dp"
+                android:layout_marginTop="10dp"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/bookName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imgBook"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Book Name"
+                android:fontFamily="@font/andika"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/collapsedLayout"
+            android:id="@+id/expandedRelLayout"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/authorText"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:src="@mipmap/writer" />
+
+
+            <TextView
+                android:id="@+id/txtAuthor"
+                android:layout_toEndOf="@id/authorText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Meisam" />
+
+            <ImageView
+                android:id="@+id/descImage"
+                android:layout_width="27dp"
+                android:layout_height="26dp"
+                android:layout_below="@id/authorText"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="3dp"
+                android:src="@drawable/ic_info"/>
+
+
+            <TextView
+                android:id="@+id/txtDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/descImage"
+                android:layout_alignTop="@id/descImage"
+                android:layout_marginTop="2dp"
+                android:text="Short description"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_up_arrow"
+                android:layout_below="@id/txtDesc"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/btnUpArrow"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_delete"
+                android:layout_below="@+id/txtDesc"
+                android:layout_toStartOf="@+id/btnUpArrow"
+                android:id="@+id/btnDelete"
+                android:layout_marginEnd="5dp"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</com.google.android.material.card.MaterialCardView>
