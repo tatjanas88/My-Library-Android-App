@@ -3,12 +3,14 @@ package com.example.libraryproject;
 import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -24,8 +26,9 @@ public class BookActivity extends AppCompatActivity {
     public static final String BOOK_ID_KEY = "bookId";
 
     private Button btnAddToCurrentlyReading, btnAddToWantRead, btnAddToAlreadyRead, btnAddToFavorites;
-    private TextView txtDescription, txtBookName, txtAuthorName, txtPages, descriptionText, txt1;
+    private TextView txtDescription, txtBookName, txtAuthorName, txtPages, descriptionText, txt1, btnHome;
     private ImageView imgBook;
+    private ConstraintLayout homeBtn;
 
 
     @Override
@@ -46,7 +49,14 @@ public class BookActivity extends AppCompatActivity {
                     handleWantToReadBooks(incomingBook);
                     handleCurrentlyReadingBooks(incomingBook);
                     handleFavoriteBooks(incomingBook);
-
+                    homeBtn.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Toast.makeText(BookActivity.this, "Returning to Home Page", Toast.LENGTH_SHORT).show();
+                            Intent intentHome = new Intent(BookActivity.this, MainActivity2.class);
+                            startActivity(intentHome);
+                        }
+                    });
                 }
             }
         }
@@ -171,7 +181,7 @@ public class BookActivity extends AppCompatActivity {
     }
 
     public void setData(Book book) {
-        //getting and setting informations about the book from the class Book
+        //getting and setting information about the book from the class Book
         txtBookName.setText(book.getName());
         txtAuthorName.setText(book.getAuthor());
         txtPages.setText(String.valueOf(book.getPages()));
@@ -201,6 +211,8 @@ public class BookActivity extends AppCompatActivity {
         txtAuthorName = findViewById(R.id.txtAuthorName);
         txtPages = findViewById(R.id.txtPages);
         imgBook = findViewById(R.id.imgBook);
+        btnHome = findViewById(R.id.btnHome);
+        homeBtn = findViewById(R.id.homeBtn);
 
 
     }

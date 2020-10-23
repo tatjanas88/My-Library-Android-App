@@ -28,14 +28,14 @@ public class Utils {
     private SharedPreferences sharedPreferences;
 
     private Utils(Context context) {
-        //TODO: povezati sa username iz DB sa pocetka
-        sharedPreferences = context.getSharedPreferences("username db", Context.MODE_PRIVATE);
 
+        sharedPreferences = context.getSharedPreferences("username db", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
 
         if (null == getAllBooks()) {
             initData();
         }
-        SharedPreferences.Editor editor = sharedPreferences.edit();
+
         Gson gson = new Gson();
         if (null == getAlreadyReadBooks()) {
             editor.putString(ALREADY_READ_BOOKS, gson.toJson(new ArrayList<Book>()));

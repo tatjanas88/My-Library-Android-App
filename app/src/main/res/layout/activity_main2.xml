@@ -24,14 +24,15 @@
 
     <ImageView
         android:layout_width="100dp"
+        android:id="@+id/imgHome"
         android:layout_height="100dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
         android:src="@mipmap/ikona"
-        app:layout_constraintBottom_toTopOf="@+id/txtLicence"
+        app:layout_constraintTop_toBottomOf="@id/btnSignOff"
+        app:layout_constraintBottom_toTopOf="@id/txtLicence"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAbout" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <androidx.cardview.widget.CardView
@@ -211,8 +212,22 @@
                 android:textColor="#fff"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/btnSignOff"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:textSize="20sp"
+        android:text="Sign Off"
+        android:fontFamily="@font/andika"
+        app:layout_constraintTop_toBottomOf="@id/btnAbout"
+        android:textIsSelectable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp" />
 
 
     <TextView

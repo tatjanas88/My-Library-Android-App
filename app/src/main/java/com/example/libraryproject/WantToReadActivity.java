@@ -22,7 +22,7 @@ public class WantToReadActivity extends AppCompatActivity {
         adapter.setBooks(Utils.getInstance(this).getWantToReadBooks());
         if (Utils.getInstance(this).getWantToReadBooks().isEmpty())
         {
-            Toast.makeText(this, "--There is currently no books in wishlist--", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "--There are currently no books in wishlist--", Toast.LENGTH_LONG).show();
         }
     }
 

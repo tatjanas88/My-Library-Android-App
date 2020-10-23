@@ -21,7 +21,7 @@ public class AlreadyReadBooksActivity extends AppCompatActivity {
         adapter.setBooks(Utils.getInstance(this).getAlreadyReadBooks());
         //checking if the list is empty
         if (Utils.getInstance(this).getAlreadyReadBooks().isEmpty()) {
-            Toast.makeText(this, "--There is currently no books in Already Read--", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "--There are currently no books in Already Read--", Toast.LENGTH_LONG).show();
         }
     }
 

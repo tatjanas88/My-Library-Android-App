@@ -25,12 +25,13 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="30dp"
                 android:src="@mipmap/ikona"
                 app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="gone"
                 app:layout_constraintTop_toBottomOf="@id/btnAddToFavorites" />
 
             <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
@@ -211,6 +212,48 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_begin="124dp" />
+
+            <TextView
+                android:id="@+id/btnHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Home"
+                app:layout_constraintBottom_toTopOf="@+id/imgBook"
+                app:layout_constraintStart_toStartOf="@id/guideline3"
+                app:layout_constraintTop_toTopOf="parent"
+                android:drawableLeft="@drawable/ic_back_white"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:visibility="gone" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/homeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/guideline3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/imgBook">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/imgBack"
+                    android:src="@mipmap/icon_back1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:layout_constraintStart_toEndOf="@id/imgBack"
+                    android:src="@mipmap/icon_home"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

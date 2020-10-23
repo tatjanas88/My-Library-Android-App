@@ -4,23 +4,30 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.bumptech.glide.util.Util;
 //in this activity just setting OnClickListeners for all the buttons
 
 public class MainActivity2 extends AppCompatActivity {
     private CardView btnAllBooks, btnCurrentlyReading, btnAlreadyRead, btnWantToRead, btnFavorite, btnAbout;
-    private TextView txtName, txtLicence;
+    private TextView txtName, txtLicence, btnSignOff;
+    //public static Boolean signedOff=true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         initViews();
+        Utils.getInstance(this);
         btnAllBooks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,7 +90,17 @@ public class MainActivity2 extends AppCompatActivity {
                 builder.create().show();
             }
         });
-        Utils.getInstance(this);
+
+        btnSignOff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity2.this, "Signed Off", Toast.LENGTH_SHORT).show();
+                Intent signOff = new Intent(MainActivity2.this, MainActivity.class);
+                startActivity(signOff);
+                //signedOff = true;
+            }
+        });
+
     }
 
 
@@ -96,5 +113,6 @@ public class MainActivity2 extends AppCompatActivity {
         btnFavorite = findViewById(R.id.btnFavorite);
         btnAbout = findViewById(R.id.btnAbout);
         txtLicence = findViewById(R.id.txtLicence);
+        btnSignOff = findViewById(R.id.btnSignOff);
     }
 }

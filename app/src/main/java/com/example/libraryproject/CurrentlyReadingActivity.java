@@ -20,7 +20,7 @@ public class CurrentlyReadingActivity extends AppCompatActivity {
         bookRecView.setLayoutManager(new LinearLayoutManager(this));
         adapter.setBooks(Utils.getInstance(this).getCurrentlyReadingBooks());
         if (Utils.getInstance(this).getCurrentlyReadingBooks().isEmpty()) {
-            Toast.makeText(this, "--There is no books in Currently Reading--", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "--There are no books in Currently Reading--", Toast.LENGTH_LONG).show();
         }
     }
 

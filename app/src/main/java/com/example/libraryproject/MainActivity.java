@@ -5,6 +5,8 @@ import androidx.cardview.widget.CardView;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.MailTo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -51,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                     //usernameDB = username;
                     Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
                     Intent g = new Intent(MainActivity.this, MainActivity2.class);
+
                     startActivity(g);
                 } else {
                     Toast.makeText(getApplicationContext(), "Wrong username or password", Toast.LENGTH_SHORT).show();

@@ -22,7 +22,7 @@ public class FavoriteBooksActivity extends AppCompatActivity {
         //checking if the list is empty
         if (Utils.getInstance(this).getFavoriteBooks().isEmpty())
         {
-            Toast.makeText(this, "--There is currently no books in favorites--", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "--There are currently no books in favorites--", Toast.LENGTH_LONG).show();
         }
     }
 

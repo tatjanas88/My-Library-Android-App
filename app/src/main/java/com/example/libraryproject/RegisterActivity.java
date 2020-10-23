@@ -3,7 +3,9 @@ package com.example.libraryproject;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -46,8 +48,14 @@ public class RegisterActivity extends AppCompatActivity {
                                 returnButton.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
+                                        //clearing SharedPref.
+                                        SharedPreferences preferences = getSharedPreferences("username db", Context.MODE_PRIVATE);
+                                        SharedPreferences.Editor editor = preferences.edit();
+                                        editor.clear();
+                                        editor.commit();
                                         Intent r = new Intent(RegisterActivity.this, MainActivity.class);
                                         startActivity(r);
+
 
                                     }
                                 });
