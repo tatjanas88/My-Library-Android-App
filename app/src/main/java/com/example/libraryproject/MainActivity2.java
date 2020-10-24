@@ -71,7 +71,7 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity2.this);
                 builder.setTitle(getString(R.string.app_name));
-                builder.setMessage("More information about all the books from the app can be checked on the Good Reads web page\n\n" + "*Check the website*");
+                builder.setMessage("More information about all the books from the app  and ways to buy can be checked on the Book Depository web page\n\n" + "*Check the website*");
                 builder.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

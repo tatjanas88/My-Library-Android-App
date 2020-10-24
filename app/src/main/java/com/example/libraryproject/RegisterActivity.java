@@ -51,8 +51,8 @@ public class RegisterActivity extends AppCompatActivity {
                                         //clearing SharedPref.
                                         SharedPreferences preferences = getSharedPreferences("username db", Context.MODE_PRIVATE);
                                         SharedPreferences.Editor editor = preferences.edit();
-                                        editor.clear();
-                                        editor.commit();
+                                        //preferences.edit().remove("username db").commit();
+                                        editor.clear().commit();
                                         Intent r = new Intent(RegisterActivity.this, MainActivity.class);
                                         startActivity(r);
 

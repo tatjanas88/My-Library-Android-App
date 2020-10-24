@@ -14,7 +14,7 @@ public class WebSiteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_site);
         webView = findViewById(R.id.webView);
-        webView.loadUrl("https://www.goodreads.com/");
+        webView.loadUrl("https://www.bookdepository.com/");
         webView.setWebViewClient(new WebViewClient());
     }
 
